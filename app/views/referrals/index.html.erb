@@ -1,0 +1,55 @@
+<%- model_class = Referral -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+   <form class="form-search">
+
+    <%= text_field_tag :name, params[:name] %>
+
+    <button type="submit" class="btn">Search</button>
+    </form>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:role) %></th>
+      <th><%= model_class.human_attribute_name(:technology) %></th>
+      <th><%= model_class.human_attribute_name(:referredby) %></th>
+      <th><%= model_class.human_attribute_name(:referred_at) %></th>
+      <th><%= model_class.human_attribute_name(:cv) %></th>
+
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @referrals.each do |referral| %>
+      <tr>
+        <td><%= link_to referral.id, referral_path(referral) %></td>
+        <td><%= referral.name %></td>
+        <td><%= referral.email %></td>
+        <td><%= referral.role %></td>
+        <td><%= array_to_string_html(referral.technology) %></td>
+        <td><%= referral.referredby %></td>
+        <td><%=l referral.created_at %></td>
+        <td><%= link_to 'My CV', referral.cv.url %></td>
+        <td>
+                        <%= link_to 'View', referral,:class => 'btn btn-primary' %>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_referral_path(referral), :class => 'btn btn-mini' %>
+          <%= link_to t('.delete', :default => t("helpers.links.delete")),
+                      referral_path(referral),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_referral_path,
+            :class => 'btn btn-primary' %>

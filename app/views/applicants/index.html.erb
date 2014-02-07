@@ -1,0 +1,76 @@
+<%- model_class = Applicant -%>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/javascripts/excanvas/excanvas.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/javascripts/spinners/spinners.min.js"></script>
+    <script type="text/javascript" src="/javascripts/lightview/lightview.js"></script>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<form class="form-search">
+
+    <%= text_field_tag :search, params[:search] %>
+
+    <button type="submit" class="btn">Search</button>
+    
+     
+    </form>
+    
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:lname) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:mobile) %></th>
+      <th><%#= model_class.human_attribute_name(:education) %></th>
+      <th><%#= model_class.human_attribute_name(:technology) %></th>
+      <th><%#= model_class.human_attribute_name(:experience) %></th>
+      <th><%= model_class.human_attribute_name(:role) %></th>
+      <th><%= model_class.human_attribute_name(:round) %></th>
+      <th><%#= model_class.human_attribute_name(:scheduleofinterview) %></th>
+      <th><%#= model_class.human_attribute_name(:interviewers) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:cv) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @applicants.each do |applicant| %>
+      <tr>
+        <td><%= link_to applicant.id, applicant_path(applicant) %></td>
+        <td><%= applicant.name %></td>
+        <td><%= applicant.lname %></td>
+        <td><%= applicant.email %></td>
+        <td><%= applicant.mobile %></td>
+         <td><%#= applicant.education %></td>
+        <td><%#= applicant.technology %></td>
+        <td><%#= applicant.sourcingpartner %></td>
+        <td><%= applicant.role %></td>
+        <td><%= applicant.round %></td>
+        <td><%#= applicant.scheduleofinterview %></td>
+        <td><%#= applicant.interviewers %></td>
+        <td><%= applicant.status %></td>
+        <td><%= link_to 'My CV', applicant.cv.url %></td>
+        <td>
+                                  <%= link_to 'View', applicant,:class => 'btn btn-primary' %>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_applicant_path(applicant), :class => 'btn btn-mini' %>
+          <%= link_to t('.delete', :default => t("helpers.links.delete")),
+                      applicant_path(applicant),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_applicant_path,
+            :class => 'btn btn-primary' %>

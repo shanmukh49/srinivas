@@ -1,0 +1,44 @@
+<%= form_for @referral, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :role, :class => 'control-label' %>
+    <div class="controls">
+    <%= f.select :role, Role.all.collect(&:name) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :technology, :class => 'control-label' %>
+    <div class="controls">
+    <%= f.select :technology, Technology.all.collect(&:name), {},:multiple => true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :referredby, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :referredby, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :CV, :class => 'control-label' %>
+    <div class="controls">
+ <%= f.file_field :cv %>    </div>
+  </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                referrals_path, :class => 'btn' %>
+  </div>
+<% end %>

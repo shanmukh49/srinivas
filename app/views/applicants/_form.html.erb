@@ -1,0 +1,90 @@
+<%= form_for @applicant, :html => { :class => 'form-horizontal' } do |f| %>
+Personal Details:
+  <div class="control-group">
+    <%= f.label :name,"First Name", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lname,"Last Name", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mobile,"Mobile Number", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mobile, :class => 'text_field' %>
+    </div>
+  </div>
+  Education Details:
+  <div class="control-group">
+    <%= f.label :education,"Education Qualification", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :education, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :technology,"Technology Skills", :class => 'control-label' %>
+    <div class="controls">
+          <%= f.select :technology, Technology.all.collect(&:name), {},:multiple => true %>
+
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sourcingpartner,"Experience", :class => 'control-label' %>
+    <div class="controls">
+    <%= f.select :sourcingpartner, Sourcingpartner.all.collect(&:name) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :role, :class => 'control-label' %>
+    <div class="controls">
+    <%= f.select :role, Role.all.collect(&:name) %>
+    </div>
+  </div>
+  Interview Details:
+  <div class="control-group">
+    <%= f.label :round, :class => 'control-label' %>
+    <div class="controls">
+    <%= f.select :round, Round.all.collect(&:name) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :scheduleofinterview, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :scheduleofinterview, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :interviewers, :class => 'control-label' %>
+    <div class="controls">
+    <%= f.select :interviewers, Interviewer.all.collect(&:name), {},:multiple => true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :status, Status.all.collect(&:name) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :CV, :class => 'control-label' %>
+    <div class="controls">
+ <%= f.file_field :cv %>    </div>
+  </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                applicants_path, :class => 'btn' %>
+  </div>
+<% end %>
