@@ -5,7 +5,7 @@ gem "ransack"
 gem 'calendar_date_select', :git => 'git://github.com/paneq/calendar_date_select.git'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'simple_form'
 gem 'mysql2'
 gem 'therubyracer'
 gem 'execjs'
