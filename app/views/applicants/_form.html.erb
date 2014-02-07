@@ -1,6 +1,6 @@
 <%= form_for @applicant, :html => { :class => 'form-horizontal' } do |f| %>
-Personal Details:
-  <div class="control-group">
+<p style="color:#40C035">Personal Details:</p>
+  <div class="control-group"><br><br>
     <%= f.label :name,"First Name", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :name, :class => 'text_field' %>
@@ -24,8 +24,8 @@ Personal Details:
       <%= f.text_field :mobile, :class => 'text_field' %>
     </div>
   </div>
-  Education Details:
-  <div class="control-group">
+  <p style="color:#40C035">Education Details:</p>
+  <div class="control-group"><br><br>
     <%= f.label :education,"Education Qualification", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :education, :class => 'text_field' %>
@@ -50,8 +50,8 @@ Personal Details:
     <%= f.select :role, Role.all.collect(&:name) %>
     </div>
   </div>
-  Interview Details:
-  <div class="control-group">
+  <p style="color:#40C035">Interview Details:</p>
+  <div class="control-group"><br><br>
     <%= f.label :round, :class => 'control-label' %>
     <div class="controls">
     <%= f.select :round, Round.all.collect(&:name) %>

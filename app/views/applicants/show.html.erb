@@ -4,6 +4,7 @@
 </div>
 
 <dl class="dl-horizontal">
+  <p style="color:#40C035">Personal Details:</p>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @applicant.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:lname) %>:</strong></dt>
@@ -12,6 +13,7 @@
   <dd><%= @applicant.email %></dd>
   <dt><strong><%= model_class.human_attribute_name(:mobile) %>:</strong></dt>
   <dd><%= @applicant.mobile %></dd>
+  <p style="color:#40C035">Education Details:</p>
   <dt><strong><%= model_class.human_attribute_name(:education) %>:</strong></dt>
   <dd><%= @applicant.education %></dd>
   <dt><strong><%= model_class.human_attribute_name(:technology) %>:</strong></dt>
@@ -20,6 +22,7 @@
   <dd><%= @applicant.experience %></dd>
   <dt><strong><%= model_class.human_attribute_name(:role) %>:</strong></dt>
   <dd><%= @applicant.role %></dd>
+  <p style="color:#40C035">Interview Details:</p>
   <dt><strong><%= model_class.human_attribute_name(:round) %>:</strong></dt>
   <dd><%= @applicant.round %></dd>
   <dt><strong><%= model_class.human_attribute_name(:scheduleofinterview) %>:</strong></dt>

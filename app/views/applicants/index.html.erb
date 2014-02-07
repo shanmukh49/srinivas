@@ -8,6 +8,11 @@
     <script type="text/javascript" src="/javascripts/lightview/lightview.js"></script>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <div id="new">
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_applicant_path,
+            :class => 'btn btn-primary' %>
+  </div>
 </div>
 <form class="form-search">
 
@@ -16,7 +21,7 @@
     <button type="submit" class="btn">Search</button>
     
      
-    </form>
+    </form><br>
     
 <table class="table table-striped">
   <thead>
@@ -71,6 +76,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%#= link_to t('.new', :default => t("helpers.links.new")),
             new_applicant_path,
             :class => 'btn btn-primary' %>

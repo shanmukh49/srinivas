@@ -1325,7 +1325,7 @@ input[type="file"] {
   line-height: 30px;
 }
 select {
-  width: 220px;
+  width: 165px;
   border: 1px solid #000000;
   background-color: #cbd7dd;
 }
@@ -6130,5 +6130,13 @@ button.close {
   margin-left: 150px;
   float:left;
   margin-top: 25px;
+}
+
+.row-fluid > form:nth-child(6) > center:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > font:nth-child(1) > b:nth-child(1){
+  margin-left: 600px;
+}
+
+#new{
+  margin-left:1250px;
 }
 

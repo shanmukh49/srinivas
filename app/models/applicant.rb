@@ -6,7 +6,7 @@ class Applicant < ActiveRecord::Base
                     :path => ":rails_root/public/assets/products/:id/original/:basename.:extension"
 
   validates_attachment_content_type :cv,
-      :content_type => [ 'application/pdf','application/msword'],
+      :content_type => [ 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
       :message => "only pdf and word files are allowed"
       validates :email, :uniqueness => true
     validates :email, :format => { :with => /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/,
