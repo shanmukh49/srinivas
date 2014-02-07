@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20140206090528) do
     t.string   "name"
     t.string   "email"
     t.string   "technology"
-    t.string   "sourcingpartner"
+    t.string   "experience"
     t.string   "role"
     t.string   "round"
     t.datetime "scheduleofinterview"
@@ -65,6 +65,13 @@ ActiveRecord::Schema.define(:version => 20140206090528) do
     t.string   "lname"
     t.string   "mobile"
     t.string   "education"
+  end
+
+  create_table "experiences", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "interviewers", :force => true do |t|
@@ -139,13 +146,6 @@ ActiveRecord::Schema.define(:version => 20140206090528) do
   end
 
   create_table "rounds", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "sourcingpartners", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  :null => false

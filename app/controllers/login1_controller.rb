@@ -23,7 +23,7 @@ class Login1Controller < ApplicationController
       	pw_from_db = pw_array[0].password
         if pw_from_db == encoded_pw
           session[:logged_in] = true
-          redirect_to :controller => '/interviewers' 
+          redirect_to :controller => '/applicants' 
         end
       end
     end

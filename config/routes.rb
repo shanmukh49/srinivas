@@ -42,7 +42,7 @@ resources :statuses
   resources :rounds
 
 
-  resources :sourcingpartners
+  resources :experiences
 
 
   resources :technologies

@@ -39,9 +39,9 @@ Personal Details:
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :sourcingpartner,"Experience", :class => 'control-label' %>
+    <%= f.label :experience,"Experience", :class => 'control-label' %>
     <div class="controls">
-    <%= f.select :sourcingpartner, Sourcingpartner.all.collect(&:name) %>
+    <%= f.select :experience, Experience.all.collect(&:name) %>
     </div>
   </div>
   <div class="control-group">

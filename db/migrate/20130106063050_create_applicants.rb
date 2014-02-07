@@ -4,7 +4,7 @@ class CreateApplicants < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.string :technology
-      t.string :sourcingpartner
+      t.string :experience
       t.string :role
       t.string :round
       t.datetime :scheduleofinterview
