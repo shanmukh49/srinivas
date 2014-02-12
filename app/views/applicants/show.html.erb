@@ -17,7 +17,7 @@
   <dt><strong><%= model_class.human_attribute_name(:education) %>:</strong></dt>
   <dd><%= @applicant.education %></dd>
   <dt><strong><%= model_class.human_attribute_name(:technology) %>:</strong></dt>
-  <dd><%= array_to_string_html(@applicant.technology) %></dd>
+  <dd><%= @applicant.technology %></dd>
   <dt><strong><%= model_class.human_attribute_name(:experience) %>:</strong></dt>
   <dd><%= @applicant.experience %></dd>
   <dt><strong><%= model_class.human_attribute_name(:role) %>:</strong></dt>
@@ -28,7 +28,7 @@
   <dt><strong><%= model_class.human_attribute_name(:scheduleofinterview) %>:</strong></dt>
   <dd><%= @applicant.scheduleofinterview %></dd>
   <dt><strong><%= model_class.human_attribute_name(:interviewers) %>:</strong></dt>
-  <dd><%= array_to_string_html(@applicant.interviewers) %></dd>
+  <dd><%= @applicant.interviewers %></dd>
   <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
   <dd><%= @applicant.status %></dd>
    <dt><strong><%= model_class.human_attribute_name(:cv) %>:</strong></dt>

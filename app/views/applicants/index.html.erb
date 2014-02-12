@@ -32,7 +32,7 @@
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:mobile) %></th>
       <th><%#= model_class.human_attribute_name(:education) %></th>
-      <th><%#= model_class.human_attribute_name(:technology) %></th>
+      <th><%= model_class.human_attribute_name(:technology) %></th>
       <th><%#= model_class.human_attribute_name(:experience) %></th>
       <th><%= model_class.human_attribute_name(:role) %></th>
       <th><%= model_class.human_attribute_name(:round) %></th>
@@ -52,14 +52,14 @@
         <td><%= applicant.email %></td>
         <td><%= applicant.mobile %></td>
          <td><%#= applicant.education %></td>
-        <td><%#= applicant.technology %></td>
+        <td><%= applicant.technology %></td>
         <td><%#= applicant.experience %></td>
         <td><%= applicant.role %></td>
         <td><%= applicant.round %></td>
         <td><%#= applicant.scheduleofinterview %></td>
         <td><%#= applicant.interviewers %></td>
         <td><%= applicant.status %></td>
-        <td><%= link_to 'My CV', applicant.cv.url %></td>
+        <td><%= link_to 'My Resume', applicant.cv.url %></td>
         <td>
                                   <%= link_to 'View', applicant,:class => 'btn btn-primary' %>
 

@@ -42,7 +42,7 @@
   <div class="control-group">
     <%= f.label :technology,"Technology Skills", :class => 'control-label' %>
     <div class="controls">
-          <%= f.select :technology, Technology.all.collect(&:name), {},:multiple => true %>
+          <%= f.select :technology, Technology.all.collect(&:name) %>
 
     </div>
   </div>
@@ -74,7 +74,7 @@
   <div class="control-group">
     <%= f.label :interviewers, :class => 'control-label' %>
     <div class="controls">
-    <%= f.select :interviewers, Interviewer.all.collect(&:name), {},:multiple => true %>
+    <%= f.select :interviewers, Interviewer.all.collect(&:name) %>
     </div>
   </div>
   <div class="control-group">
@@ -93,8 +93,10 @@
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= f.submit "Reset", :type => "reset",:class => 'btn btn-primary' %>
+    <%#= f.submit "Reset", :type => "reset",:class => 'btn btn-primary' %>
+    <%= link_to "Reset", new_applicant_path,:class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 applicants_path, :class => 'btn btn-primary' %>
+
   </div>
 <% end %>
